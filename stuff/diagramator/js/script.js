@@ -49,12 +49,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Inicializa Mermaid para generar el diagrama
             mermaid.init();
-            checkAndUpdateTextarea(mermaidContent);
+            checkAndUpdateTextarea(removeLeadingSpaces(mermaidContent));
         } else {
             // Si no hay contenido mermaid, escribir el mermaid por default del dom
              
-
-            checkAndUpdateTextarea(mermaidText);
+            
+            checkAndUpdateTextarea(removeLeadingSpaces(mermaidText));
 
         }
     }
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
          // Inicializa Mermaid para generar el diagrama
          mermaid.init();
-         checkAndUpdateTextarea(mermaidContent);
+         checkAndUpdateTextarea(removeLeadingSpaces(mermaidContent));
          centerElementById('diagram-container');
      } else {
          // Si no hay contenido mermaid...
@@ -143,6 +143,34 @@ function centerElementById(id) {
             textarea.value = content; // Actualiza el textarea con el valor de content"
         }
     }
+
+    //eliminar tabulaciones
+    function removeLeadingSpaces(text) {
+       let text2 =  text.replace(/^[ \t]+/gm, ''); // Elimina espacios/tabuladores al inicio de cada línea
+
+        return addNewlineAfterGraphTD(text2);
+    }
+    
+    //inserta un salto de linea (solo por estetica :p )
+    function addNewlineAfterGraphTD(text) {
+        const graphTDIndex = text.indexOf('graph TD');
+    
+        // Verifica si "graph TD" existe en la cadena
+        if (graphTDIndex !== -1) {
+            // Verifica si el siguiente carácter después de "graph TD" es un salto de línea
+            const afterGraphTD = text.slice(graphTDIndex + 8); // 8 es la longitud de "graph TD"
+    
+            if (!afterGraphTD.startsWith('\n\n')) {
+                // Si no hay salto de línea, agrega uno después de "graph TD"
+                return text.slice(0, graphTDIndex + 8) + '\n' + text.slice(graphTDIndex + 8);
+            }
+        }
+    
+        // Si ya existe un salto de línea o no se encontró "graph TD", devolvemos el texto original
+        return text;
+    }
+    
+    
 
     // Al hacer clic en el botón de "Regenerar Diagrama", actualiza el gráfico
     document.getElementById('refresh-btn').addEventListener('click', function () {
