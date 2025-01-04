@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+header {
+    background-color: #1e1e1e;
+    color: #bb86fc;
+    text-align: center;
+    padding: 10px 0;
+}
+
+main {
+    padding: 10px;
+    text-align: center;
+}
+
+#diagram-container {
+    margin: 20px auto;
+    width: 80%;
+    min-height: 300px;
+    border: 2px dashed #bb86fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e1e;
+    flex-direction: column; /* Para que los elementos estén en columna */
+    padding: 20px;
+}
+
+.diagram-info {
+    text-align: left;        /* Alinea el texto a la derecha */
+    margin-bottom: 0;         /* Elimina el margen inferior entre los elementos de texto */
+    margin-left: 0;
+    width: 100%;
+}
+
+#diagram-title {
+    font-size: 24px;
+    color: #bb86fc;
+    margin: 0;                /* Elimina el margen por defecto */
+}
+
+#diagram-date{
+    font-size: 14px;
+    color: #e0e0e0e1;
+    margin: 0;                /* Elimina el margen por defecto */
+}
+#diagram-author {
+    font-size: 11px;
+    color: #dbb3e7;
+    margin: 0;                /* Elimina el margen por defecto */
+}
+
+
+
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #bb86fc;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+   justify-content: center;
+}
+
+button:hover {
+    background-color: #3700b3;
+}
+
+.mermaid {
+    width: 100%;
+    overflow-x: auto;
+    padding-top:20px;
+    padding-bottom: 20px;
+    height: auto;
+    
+}
+
+#area-mermaid-container{
+    width: 100%;
+    justify-content: center;    
+    margin-top: 30px;
+    height: auto;
+    
+     
+}
+
+#mermaid-code-title {
+    width: 80%;
+    min-height: 10px;
+    font-size: 14px;
+    color: #bc90f1;
+    margin: 20px auto;
+    padding: 0;
+    margin-top: 0px; /* agrega espacio superior */
+    margin-bottom: 5px; /* controlamos espacio inferior */
+    justify-content: left;
+    text-align: left;
+     
+    display: flex;
+    
+}
+
+#mermaid-code {
+    margin: 20px auto;
+    margin-top: 0px;
+    width: 80%;
+    min-height: 10px;
+    height: auto;
+    background-color: #121212;
+    color: #e0e0e0;
+    border: 2px solid #bb86fc;
+    padding: 20px;
+    resize: vertical;         /* Permite que el área de texto sea redimensionada en alto */
+    overflow-y: auto;         /* Agrega el scroll vertical si el contenido es más grande */
+    margin-bottom: 20px;      /* Espacio entre el textarea y el botón */
+    font-family: 'Courier New', monospace; /* Fuente monoespaciada */
+    font-size: 14px;
+   
+}
+
+footer {
+    display: flex;
+    justify-content: center;   /* Centra el contenido horizontalmente */
+    align-items: center;       /* Centra el contenido verticalmente */
+    padding: 10px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    height: 10px;              /* Altura del footer */
+    font-size: small;
+    margin-top: 50px;
+}
+
+ 

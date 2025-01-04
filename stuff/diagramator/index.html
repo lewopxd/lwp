@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diagramator - Create and visualize diagrams easily with Mermaid.js">
+    <title>Diagramator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: "dark" });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Diagramator</h1>
+        <p>Create and visualize your diagrams with ease</p>
+    </header>
+
+    <main>
+        <div id="diagram-container">
+            <div class="diagram-info">
+                <h2 id="diagram-title">Diagram Title</h2>
+                <p id="diagram-date">dd/mm/aaaa</p>
+                <p id="diagram-author">@author</p>
+            </div>
+            <div id="mermaid" class="mermaid">
+                graph TD
+                A[Start] --> B[Process 1]
+                B --> C{Decision}
+                C -->|Yes| D[Process 2]
+                C -->|No| E[End]
+            </div>
+
+        </div>
+
+
+        <div id="area-mermaid-container">
+          <!-- Título para el textarea -->
+          <span id="mermaid-code-title">Mermaid code:</span>
+         <!-- Textarea para editar código Mermaid -->
+        <textarea id="mermaid-code" placeholder="Edit your Mermaid diagram code here..."></textarea>
+        </div>
+        <button id="refresh-btn">Generate</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Diagramator. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
