@@ -77,13 +77,16 @@ button:hover {
     overflow-x: auto;
     padding-top:20px;
     padding-bottom: 20px;
+
     height: auto;
-    
+    max-width: 100%;
+    overflow: hidden;
 }
 
 #area-mermaid-container{
     width: 100%;
-    justify-content: center;    
+    justify-content: center;
+    
     margin-top: 30px;
     height: auto;
     
@@ -121,7 +124,7 @@ button:hover {
     margin-bottom: 20px;      /* Espacio entre el textarea y el botón */
     font-family: 'Courier New', monospace; /* Fuente monoespaciada */
     font-size: 14px;
-   
+    field-sizing: content; /* used to be `form-sizing` but changed to this */ 
 }
 
 footer {
@@ -136,4 +139,8 @@ footer {
     margin-top: 50px;
 }
 
- 
+svg {
+    width: 100%;
+    height: auto;
+  }
+  
